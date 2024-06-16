@@ -296,7 +296,7 @@ leo run play "{
 ✅ Executed 'battleship.aleo/play'
 ```
 
-Player 1 has an updated `board_state.record` - they have a new `played_tiles` bitstring, which corresponds to the fire coordinate they just sent to Player 2. You can see that the `incoming_fire_coordinate` in the `move.record` owned by Player 2 matches exactly the input given by Player 1. Player 2 can now play this move tile and respond with a fire coordinate of their own, and they will also let Player 1 know whether their fire coordinate hit or miss Player 2's ships.
+Player 1 has an updated `board_state.record` - they have a new `played_tiles` bitstring, which corresponds to the fire coordinate they just sent to Player 2. You can see that the `incoming_fire_coordinate` in the `move.record` owned by Player 2 matches exactly the input given by Player 1. Player 2 can now play this move tile and respond with a fire coordinate of their own, and they will also let Player 1 know whether their fire coordinate hit or misses Player 2's ships.
 
 ## 7: Player 2 Takes The 2nd Turn
 
