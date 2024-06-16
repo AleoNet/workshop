@@ -71,7 +71,7 @@ program battleship.aleo {
     }
 
     // Returns updated board record.
-    // Returns new move record owned by opponent.
+    // Returns new move record owned by the opponent.
     transition play(
         // The board record to update.
         board: board.aleo/board_state.record,
@@ -91,7 +91,7 @@ program battleship.aleo {
         // Play coordinate on own board. Will fail if not a valid move.
         let hit_or_miss: board.aleo/board_state = board.aleo/update_played_tiles(board, shoot);
 
-        // Update own board with result of last shot.
+        // Update your own board with the result of last shot.
         let next_board: board.aleo/board_state = board.aleo/update_hits_and_misses(hit_or_miss, move_incoming.prev_hit_or_miss);
 
         // Assess whether incoming fire coordinate is a hit.
