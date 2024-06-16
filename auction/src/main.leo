@@ -49,7 +49,7 @@ program auction.aleo {
         }
     }
 
-    // Returns ownership of the bid to bidder.
+    // Returns ownership of the bid to the bidder.
     // - `bid` : The winning bid.
     // Requires that the function caller is the auction runner.
     // Assumes that the function is invoked only after all bids have been resolved.
