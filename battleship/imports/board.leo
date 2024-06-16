@@ -13,7 +13,7 @@ program board.aleo {
         hits_and_misses: u64,
         // The squares that have been played on the opponent's board.
         played_tiles: u64,
-        // The ship bitstring representing all ship positions on your own board
+        // The ship bitstring represents all ship positions on your own board
         ships: u64,
         player_1: address,
         player_2: address,
