@@ -22,7 +22,7 @@ program verify.aleo {
         return r11;
     }
 
-    // Returns boolean of whether all the flipped bits in location are "adjacent". Horizontally, this means all flipped bits are
+    // Returns boolean of whether all the flipped bits in the location are "adjacent". Horizontally, this means all flipped bits are
     // directly next to each other (111). Vertically, this means all flipped bits are separated by 7 unflipped bits
     // (10000000100000001).
     function adjacency_check(
