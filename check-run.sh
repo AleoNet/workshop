@@ -3,50 +3,47 @@
 # Run this script from the root directory of the workshop repository.
 # Note that this script is expected to run successfully.
 
-# Run the auction example.
-cd auction
-echo "
-[CHECK] CHECKING THE AUCTION EXAMPLE"
-chmod +x ./run.sh
-./run.sh
-cd ..
+#!/bin/bash
+# A script to check that all examples compile and run.
+# Run this script from the root directory of the workshop repository.
+# Note that this script is expected to run successfully
 
-# Run the basic bank example.
-cd basic_bank
-echo "
-[CHECK] CHECKING THE BASIC BANK EXAMPLE"
-chmod +x ./run.sh
-./run.sh
-cd ..
+# Function to check and run scripts in each directory.
+function check_example(){
+    local name=$1
+    # Check if the directory exists
+    if [ ! -d $name ]
+    then
+        echo "ERROR: Directory $name does not exist."
+        return 1
+    fi
 
-# Run the battleship example.
-cd battleship
-echo "
-[CHECK] CHECKING THE BATTLESHIP EXAMPLE"
-chmod +x ./run.sh
-./run.sh
-cd ..
+    cd $name || exit 
+    echo "CHECK: CHECKING THE $(echo "$name" | tr '[:lower:]' '[:upper:]') EXAMPLE"
 
-# Run the tictactoe example.
-cd tictactoe
-echo "
-[CHECK] CHECKING THE TICTACTOE EXAMPLE"
-chmod +x ./run.sh
-./run.sh
-cd ..
+    # Check if the run.sh sript exists
+    if [ ! -f ./run.sh ]
+    then
+        echo "ERROR: run.sh not found in $name."
+        cd ..
+        return 1
+    fi
 
-# Run the token example.
-cd token
-echo "
-[CHECK] CHECKING THE TOKEN EXAMPLE"
-chmod +x ./run.sh
-./run.sh
-cd ..
+    #Make the run.sh script executable and run it
+    chmod +x ./run.sh
+    ./run.sh || { echo "ERROR: Failed to execute run.sh in $name."; cd ..; return 1; }
+    cd ..
+}
 
-# Run the vote example.
-cd vote
-echo "
-[CHECK] CHECKING THE VOTE EXAMPLE"
-chmod +x ./run.sh
-./run.sh
-cd ..
+# A list of all the examples
+examples_list=("auction" "basic_bank" "battleship" "tictactoe" "token" "vote")
+
+
+# Loop through each example and check it
+for example in ${examples_list[@]}
+do
+    if ! check_example $example
+    then
+        echo "ERROR: An error occured while checking $example"
+    fi
+done
