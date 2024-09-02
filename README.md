@@ -3,7 +3,7 @@
 <h3 align="center">📜 A starter guide to build applications on Aleo 📜</h3>
 
 <p align="center">
-    <a href="https://twitter.com/AleoHQ"><img src="https://img.shields.io/twitter/url/https/twitter.com/AleoHQ.svg?style=social&label=Follow%20%40AleoHQ"></a>
+    <a href="https://x.com/AleoHQ"><img src="https://img.shields.io/twitter/url/https/twitter.com/AleoHQ.svg?style=social&label=Follow%20%40AleoHQ"></a>
     <a href="https://aleo.org/discord"><img src="https://img.shields.io/discord/700454073459015690?logo=discord"/></a>
 </p>
 
@@ -12,7 +12,7 @@
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 - [IDE Support](#ide-support)
-    - [VSCode](#vscode-preferred)
+    - [VSCode Preferred](#vscode-preferred)
     - [Sublime Text](#sublime-text)
     - [IntelliJ IDEA](#intellij-idea)
 - [Application Walkthroughs](#application-walkthroughs)
